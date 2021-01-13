@@ -1,7 +1,12 @@
 version: '3'
 services:
   node_api:
-    build: .
+    build: ./customer
     image: node_kong
     container_name: node_api
+    network_mode: kong-net
+  node_api_ts:
+    build: ./client
+    image: node_api_ts
+    container_name: node_api_ts
     network_mode: kong-net
