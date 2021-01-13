@@ -1,0 +1,7 @@
+version: '3'
+services:
+  node_api:
+    build: .
+    image: node_kong
+    container_name: node_api
+    network_mode: kong-net
